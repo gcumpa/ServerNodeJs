@@ -1,0 +1,25 @@
+pipeline{
+    agent any
+    tools{
+        nodejs "node"
+    }
+
+    stages{
+        stage("clonando el repo..."){
+            steps{
+                git "https://github.com/gcumpa/ServerNodeJs"
+            }
+        }
+        stage("construyendo el proyecto..."){
+            steps{
+                bat 'npm install'
+            }
+        }
+        stage("Ejecutando..."){
+            steps{
+                bat 'node serve.js'
+            }
+        }
+    }
+
+}
