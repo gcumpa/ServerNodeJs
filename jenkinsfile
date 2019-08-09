@@ -17,7 +17,7 @@ pipeline{
         }
         stage("Ejecutando..."){
             steps{
-                bat 'node serve.js'
+                bat 'node server.js'
             }
         }
     }
